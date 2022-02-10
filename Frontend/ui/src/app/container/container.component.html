@@ -1,0 +1,21 @@
+<app-header [status]="status" [remainingSoda]="remainingSoda"></app-header>
+<div class="container">
+  <app-card
+    title="Insert"
+    description="Please Insert The Coin"
+    [cardClick]="onInsert"
+    *ngIf="isInsertEnable()"
+  ></app-card>
+  <app-card
+    title="Withdraw Soda"
+    description="Withdraw Soda from Machine"
+    [cardClick]="onWithDraw"
+    *ngIf="!isInsertEnable()"
+  ></app-card>
+  <app-card
+    title="Cancel"
+    description="Cancel and Return Coin"
+    [cardClick]="onStop"
+    *ngIf="!isInsertEnable()"
+  ></app-card>
+</div>
